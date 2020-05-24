@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.RegistrationSceneController">
+   <children>
+      <ImageView fitHeight="804.0" fitWidth="1200.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="file:/D:/ClientGUI/image/background.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="804.0" prefWidth="1200.0" spacing="10.0">
+         <children>
+            <Text fill="#6b23cf" smooth="false" strokeType="OUTSIDE" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, purple 20%, blue 50%);" text="Please enter your information" underline="true" wrappingWidth="773.5419921875">
+               <font>
+                  <Font name="Book Antiqua Italic" size="64.0" />
+               </font>
+            </Text>
+            <GridPane prefHeight="641.0" prefWidth="1180.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="543.0" minWidth="10.0" prefWidth="543.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="388.0" minWidth="10.0" prefWidth="243.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, red 20%,  purple 50%);" text="Username  ">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="usernameText" prefHeight="0.0" prefWidth="308.0" style="-fx-background-color: purple , purple , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </TextField>
+                  <Text smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, red 20%,  purple 50%);" text="Password    " GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="passwordText" prefHeight="68.0" prefWidth="424.0" style="-fx-background-color: purple , purple , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </PasswordField>
+                  <Text smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, red 20%,  purple 50%);" text="First Name" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="10.0" layoutY="247.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, red 20%,  purple 50%);" text="Job/Occupation" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="10.0" layoutY="68.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, red 20%,  purple 50%);" text="Phone Number" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="10.0" layoutY="68.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, red 20%,  purple 50%);" text="E-mail" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="10.0" layoutY="68.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, red 20%,  purple 50%);" text="Last Name" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="firstNameText" prefHeight="47.0" prefWidth="424.0" style="-fx-background-color: purple , purple , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="lastNameText" prefHeight="47.0" prefWidth="424.0" style="-fx-background-color: purple , purple , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="emailText" prefHeight="47.0" prefWidth="424.0" style="-fx-background-color: purple , purple , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="phoneText" prefHeight="47.0" prefWidth="424.0" style="-fx-background-color: purple , purple , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="jobText" prefHeight="47.0" prefWidth="424.0" style="-fx-background-color: purple , purple , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Cambria" size="36.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </GridPane>
+            <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#registerBtn" prefHeight="61.0" prefWidth="281.0" style="-fx-background-color: #000000,        linear-gradient(#7ebcea, #2f4b8f),        linear-gradient(#426ab7, #263e75),        linear-gradient(#395cab, #223768);; -fx-background-radius: 30; -fx-background-insets: 0,1,2,3,0; -fx-text-fill: white;" text="Register" textAlignment="CENTER">
+                     <font>
+                        <Font name="Cambria" size="31.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="909.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelBtn" prefHeight="61.0" prefWidth="281.0" style="-fx-background-color: #000000,        linear-gradient(#7ebcea, #2f4b8f),        linear-gradient(#426ab7, #263e75),        linear-gradient(#395cab, #223768);; -fx-background-radius: 30; -fx-background-insets: 0,1,2,3,0; -fx-text-fill: white;" text="Cancel" textAlignment="CENTER">
+                     <font>
+                        <Font name="Cambria" size="31.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

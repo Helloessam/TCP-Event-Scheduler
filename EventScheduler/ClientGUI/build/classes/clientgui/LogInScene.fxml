@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.LogInSceneController">
+   <children>
+      <ImageView fitHeight="804.0" fitWidth="1200.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="file:/D:/ClientGUI/image/background.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="132.0" layoutY="109.0" prefHeight="586.0" prefWidth="937.0" spacing="50.0">
+         <children>
+            <Text fill="#6b23cf" smooth="false" strokeType="OUTSIDE" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, purple 20%, blue 50%);" text="Please enter your log in credentials" textAlignment="CENTER" wrappingWidth="936.5419921875">
+               <font>
+                  <Font name="Book Antiqua Italic" size="64.0" />
+               </font>
+            </Text>
+            <VBox alignment="CENTER" prefHeight="213.0" prefWidth="693.0" spacing="30.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Text smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, red 20%,  purple 50%);" text="Username">
+                           <font>
+                              <Font name="Cambria" size="36.0" />
+                           </font></Text>
+                        <TextField fx:id="usernameText" prefHeight="47.0" prefWidth="424.0" style="-fx-background-color: purple , purple , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;">
+                           <font>
+                              <Font name="Cambria" size="36.0" />
+                           </font></TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="21.0" prefHeight="100.0" prefWidth="200.0" spacing="23.0">
+                     <children>
+                        <Text smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, red 20%,  purple 50%);" text="Password">
+                           <font>
+                              <Font name="Cambria" size="36.0" />
+                           </font>
+                        </Text>
+                        <PasswordField fx:id="passwordText" prefHeight="68.0" prefWidth="424.0" style="-fx-background-color: purple , purple , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;">
+                           <font>
+                              <Font name="Cambria" size="36.0" />
+                           </font>
+                        </PasswordField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#logInPressed" prefHeight="61.0" prefWidth="281.0" style="-fx-background-color: #000000,        linear-gradient(#7ebcea, #2f4b8f),        linear-gradient(#426ab7, #263e75),        linear-gradient(#395cab, #223768);; -fx-background-radius: 30; -fx-background-insets: 0,1,2,3,0; -fx-text-fill: white;" text="Log In" textAlignment="CENTER">
+                     <font>
+                        <Font name="Cambria" size="31.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showHomePage" prefHeight="61.0" prefWidth="281.0" style="-fx-background-color: #000000,        linear-gradient(#7ebcea, #2f4b8f),        linear-gradient(#426ab7, #263e75),        linear-gradient(#395cab, #223768);; -fx-background-radius: 30; -fx-background-insets: 0,1,2,3,0; -fx-text-fill: white;" text="Back" textAlignment="CENTER">
+                     <font>
+                        <Font name="Cambria" size="31.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

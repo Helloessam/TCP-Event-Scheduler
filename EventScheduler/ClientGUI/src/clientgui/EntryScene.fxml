@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.EntrySceneController">
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.EntrySceneController">
    <children>
       <ImageView fitHeight="804.0" fitWidth="1200.0" pickOnBounds="true" smooth="false">
          <image>
@@ -18,11 +17,14 @@
       </ImageView>
       <VBox alignment="CENTER" layoutX="254.0" layoutY="147.0" prefHeight="511.0" prefWidth="693.0" spacing="50.0">
          <children>
-            <Text fill="#6b23cf" smooth="false" strokeType="OUTSIDE" style="-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, purple 20%, blue 50%);" text="Welcome to Event Scheduler" textAlignment="CENTER" wrappingWidth="692.5419921875">
-               <font>
-                  <Font name="Book Antiqua Italic" size="64.0" />
-               </font>
-            </Text>
+            <ImageView fitHeight="250.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@event_picture_1.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </ImageView>
             <VBox alignment="CENTER" prefHeight="213.0" prefWidth="693.0" spacing="30.0">
                <children>
                   <Button fx:id="logInBtn" alignment="CENTER" layoutX="34.0" layoutY="10.0" mnemonicParsing="false" onAction="#logInBtn" onMouseClicked="#logInBtn" style="-fx-background-color: #000000,        linear-gradient(#7ebcea, #2f4b8f),        linear-gradient(#426ab7, #263e75),        linear-gradient(#395cab, #223768);; -fx-background-radius: 30; -fx-background-insets: 0,1,2,3,0; -fx-text-fill: white;" text="Log In to Your Account" textAlignment="CENTER">

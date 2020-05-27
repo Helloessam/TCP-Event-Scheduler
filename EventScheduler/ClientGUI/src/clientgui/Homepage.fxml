@@ -34,7 +34,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="213.0" prefWidth="693.0" spacing="30.0">
                <children>
-                  <Button alignment="CENTER" layoutX="34.0" layoutY="10.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="416.0" style="-fx-background-color: #000000,        linear-gradient(#7ebcea, #2f4b8f),        linear-gradient(#426ab7, #263e75),        linear-gradient(#395cab, #223768);; -fx-background-radius: 30; -fx-background-insets: 0,1,2,3,0; -fx-text-fill: white;" text="Display Available Slots" textAlignment="CENTER">
+                  <Button fx:id="displayBtn" alignment="CENTER" layoutX="34.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadDisplayScene" prefHeight="61.0" prefWidth="416.0" style="-fx-background-color: #000000,        linear-gradient(#7ebcea, #2f4b8f),        linear-gradient(#426ab7, #263e75),        linear-gradient(#395cab, #223768);; -fx-background-radius: 30; -fx-background-insets: 0,1,2,3,0; -fx-text-fill: white;" text="Display Available Slots" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>

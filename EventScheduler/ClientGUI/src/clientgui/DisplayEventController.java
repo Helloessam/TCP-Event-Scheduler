@@ -5,8 +5,13 @@
  */
 package clientgui;
 
+import java.io.IOException;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -24,11 +29,26 @@ public class DisplayEventController implements Initializable {
     
     @FXML private DatePicker datePick;
     @FXML private ComboBox roomSelector;
+    @FXML 
+    private Button dispBtn;
+    
+    ObservableList<String> list = FXCollections.observableArrayList("Room1","Room2", "Room3");
+    String roomNo = (String) roomSelector.getValue();
+    String daten = datePick.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    String p = "2 " + roomNo + " " + "daten";
+    
+    
+    public void display(ActionEvent event) throws IOException{
+         
+         System.out.print(p);
+        
+    }
     
             
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        roomSelector.setItems(list);
     }    
     
 } 

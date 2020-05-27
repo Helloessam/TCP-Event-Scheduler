@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2020 at 08:38 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: May 27, 2020 at 02:51 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `eventscheduler`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reservations`
+--
+
+CREATE TABLE `reservations` (
+  `Room_id` varchar(255) NOT NULL,
+  `Event_date` date NOT NULL,
+  `Period` varchar(255) NOT NULL,
+  `Event_name` varchar(255) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
+  `capacity` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reservations`
+--
+
+INSERT INTO `reservations` (`Room_id`, `Event_date`, `Period`, `Event_name`, `username`, `capacity`) VALUES
+('Room1', '2020-06-22', 'P1', 'Graduation_Party', 'mahmoud98', 50),
+('Room1', '2020-06-22', 'P3', 'Biology_Class', 'faroukelsaroo5', 50),
+('Room1', '2020-06-22', 'P5', 'Math_Class', 'glitteraway', 50),
+('Room2', '2020-07-22', 'P1', 'Geography_Class', 'lightning21', 50),
+('Room2', '2020-07-22', 'P2', 'Arabic_Class', 'keko_32', 50),
+('Room2', '2020-07-22', 'P4', 'History_Class', 'glitteraway', 50);
 
 -- --------------------------------------------------------
 
@@ -56,10 +83,27 @@ INSERT INTO `users` (`username`, `password`, `email`, `phone`, `occupation`, `fi
 --
 
 --
+-- Indexes for table `reservations`
+--
+ALTER TABLE `reservations`
+  ADD PRIMARY KEY (`Room_id`,`Event_date`,`Period`),
+  ADD KEY `username` (`username`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`username`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `reservations`
+--
+ALTER TABLE `reservations`
+  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

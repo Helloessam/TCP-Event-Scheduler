@@ -41,7 +41,10 @@ public class HandleClient implements Runnable{
             switch(requestArray[0]){
                 case "0": logInCheck();break;
                 case "1": registerNewUser();break;
-                case "2": displayScheduledEvents();break;
+                case "2": displayAvailableSlots();break;
+                case "3": scheduleAnEvent();break;
+                case "4": bookATicket();break;
+                case "5": displayUsersScheduledEvents();break;
             }
         }
         }
@@ -85,7 +88,7 @@ public class HandleClient implements Runnable{
             System.out.println(e);
         }
     }
-    private void displayScheduledEvents() throws IOException{
+    private void displayAvailableSlots() throws IOException{
         String response = "";
         try{
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM reservations WHERE room_id=? AND Event_date=? ORDER BY period ASC",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -97,11 +100,31 @@ public class HandleClient implements Runnable{
             out.writeUTF(response);
         }
         catch(SQLException e){
-            out.writeUTF("Username already exists");
             System.out.println(e);
         }
-    
-    
+    }
+
+    private void scheduleAnEvent() {
+        //Method here should handle scheduling a new event
+    }
+
+    private void bookATicket() {
+        //Method should handle ticket booking
+    }
+
+    private void displayUsersScheduledEvents() throws IOException {
+        String response = "";
+        try{
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM reservations WHERE username=? ORDER BY event_date ASC, period ASC",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            stmt.setString(1, requestArray[1]);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next())
+                response = response + rs.getString("Event_name")+ " " +rs.getString("Event_date") + " " +rs.getString("Period") + " " + rs.getString("Room_id")+"\n";
+            out.writeUTF(response);
+        }
+        catch(SQLException e){
+            System.out.println(e);
+        }
     }
     
 }

@@ -32,7 +32,8 @@ public class LogInSceneController implements Initializable {
     @FXML private TextField passwordText;
     
     public static String full_name;
-    String password, username;
+    public static String username;
+    private String password;
 
     public void logInPressed (ActionEvent event) throws IOException{
         

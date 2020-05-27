@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2020 at 02:51 PM
+-- Generation Time: May 27, 2020 at 04:57 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -45,9 +45,15 @@ INSERT INTO `reservations` (`Room_id`, `Event_date`, `Period`, `Event_name`, `us
 ('Room1', '2020-06-22', 'P1', 'Graduation_Party', 'mahmoud98', 50),
 ('Room1', '2020-06-22', 'P3', 'Biology_Class', 'faroukelsaroo5', 50),
 ('Room1', '2020-06-22', 'P5', 'Math_Class', 'glitteraway', 50),
+('Room1', '2020-09-22', 'P1', 'Art_Class', 'keko_32', 50),
+('Room1', '2020-09-22', 'P2', 'Geometry_Class', 'keko_32', 50),
+('Room1', '2020-09-22', 'P4', 'Trigonometry_Class', 'glitteraway', 50),
 ('Room2', '2020-07-22', 'P1', 'Geography_Class', 'lightning21', 50),
 ('Room2', '2020-07-22', 'P2', 'Arabic_Class', 'keko_32', 50),
-('Room2', '2020-07-22', 'P4', 'History_Class', 'glitteraway', 50);
+('Room2', '2020-07-22', 'P4', 'History_Class', 'glitteraway', 50),
+('Room3', '2020-08-25', 'P1', 'English_Class', 'mahmoud98', 50),
+('Room3', '2020-08-25', 'P3', 'French_Class', 'faroukelsaroo5', 50),
+('Room3', '2020-08-25', 'P5', 'AI_Class', 'glitteraway', 50);
 
 -- --------------------------------------------------------
 

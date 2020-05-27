@@ -31,6 +31,7 @@ public class LogInSceneController implements Initializable {
     @FXML private TextField usernameText;
     @FXML private TextField passwordText;
     
+    public static String full_name;
     String password, username;
 
     public void logInPressed (ActionEvent event) throws IOException{
@@ -43,12 +44,14 @@ public class LogInSceneController implements Initializable {
         }
         else{
             ClientGUI.out.writeUTF("0 " + username + " " + password);
-            if(ClientGUI.in.readUTF().equals("decline access")){
+            String response = ClientGUI.in.readUTF();
+            if(response.equals("decline access")){
                 new Alert(Alert.AlertType.ERROR, "USERNAME OR PASSWORD IS INCORRECT").showAndWait();
                 usernameText.clear(); 
                 passwordText.clear();
             }
             else{
+                full_name = response.split(" ")[0] + " "+response.split(" ")[1];
                 Parent root= FXMLLoader.load(getClass().getResource("Homepage.fxml"));
                 Scene receivingScene = new Scene(root);
                 Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();

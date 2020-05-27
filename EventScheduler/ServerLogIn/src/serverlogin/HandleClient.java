@@ -41,6 +41,7 @@ public class HandleClient implements Runnable{
             switch(requestArray[0]){
                 case "0": logInCheck();break;
                 case "1": registerNewUser();break;
+                case "2": displayScheduledEvents();break;
             }
         }
         }
@@ -56,7 +57,7 @@ public class HandleClient implements Runnable{
             stmt.setString(2, requestArray[2]);
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
-                out.writeUTF("grant access");
+                out.writeUTF(rs.getString("first_name")+ " " + rs.getString("last_name"));
             }
             else{
                 out.writeUTF("decline access");
@@ -83,6 +84,24 @@ public class HandleClient implements Runnable{
             out.writeUTF("Username already exists");
             System.out.println(e);
         }
+    }
+    private void displayScheduledEvents() throws IOException{
+        String response = "";
+        try{
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM reservations WHERE room_id=? AND Event_date=? ORDER BY period ASC",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            stmt.setString(1, requestArray[1]) ;
+            stmt.setString(2, requestArray[2]);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next())
+                response = response + rs.getString("Event_name")+ " " +rs.getString("Period") +"\n";
+            out.writeUTF(response);
+        }
+        catch(SQLException e){
+            out.writeUTF("Username already exists");
+            System.out.println(e);
+        }
+    
+    
     }
     
 }

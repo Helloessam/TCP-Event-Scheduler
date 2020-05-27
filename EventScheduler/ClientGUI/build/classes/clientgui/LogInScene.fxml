@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="804.0" fitWidth="1200.0" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="file:/D:/ClientGUI/image/background.jpg" />
+            <Image url="@background.jpg" />
          </image>
       </ImageView>
       <VBox alignment="CENTER" layoutX="132.0" layoutY="109.0" prefHeight="586.0" prefWidth="937.0" spacing="50.0">

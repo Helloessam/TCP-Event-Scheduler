@@ -43,17 +43,89 @@ public class DisplayEventController implements Initializable {
     @FXML private TableView<Table> table;
     @FXML private TableColumn<Table,String> period;
     @FXML private TableColumn<Table,String> status;
-    
+    String splitWhole[], splitLine[]; 
+   
     ObservableList<String> list = FXCollections.observableArrayList("Room1","Room2", "Room3");
     
     
     
-    public void display(ActionEvent event) throws IOException{
-
+    public void display(ActionEvent event) throws IOException, RuntimeException{
+         int indicator[]={0,0,0,0,0};
          String roomNo = (String) roomSelector.getValue();
          String daten = datePick.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
          String p = "2 " + roomNo + " " + daten;
          System.out.print(p);
+         // Sending Date and Room to server to query on DB
+         ClientGUI.out.writeUTF(p);
+         // Receiveing response from server
+             String   response = ClientGUI.in.readUTF();
+                System.out.print(response);
+                // Start of Viewing items on TableView
+                ObservableList<Table> info = FXCollections.observableArrayList();
+                ///////// If condition to check if response is empty/////////
+                if ("".equals(response))
+                {
+                    int i=0;
+                    while (true)
+                     {
+                         if (indicator[i]==0 || "".equals(response))
+                             info.add(new Table("P"+(i+1),"Available"));
+                         
+                         i++;
+                         if (i==5)
+                             break;
+                     }
+                }
+                /////// Else if response is not empty///////
+                else {
+         // splitting the response array 
+         splitWhole = response.split("\n");
+         // assigning the number of available events
+         int l = splitWhole.length;        
+         
+         // While loop to setup an array with all available and non available  periods
+         int i=0;
+         while (l!=0){
+             splitLine = splitWhole[i].split(" ");
+            switch (splitLine[1])
+             {
+                 case "P1": indicator[0] = 1; break;
+                 case "P2": indicator[1] = 1; break;
+                 case "P3": indicator[2] = 1; break;
+                 case "P4": indicator[3] = 1; break;
+                 case "P5": indicator[4] = 1; break;              
+             }      
+        l--; i++;          
+         }
+         
+        // while loop to create new objects and add to table based on database
+         i=0; int j=0; l = splitWhole.length;
+         while (true)
+         {
+             if (indicator[i]==0 )
+                  info.add(new Table("P"+(i+1),"Available"));
+             else{
+                  splitLine = splitWhole[j].split(" ");
+                  info.add(new Table(splitLine[1] + ": " + splitLine[0],"Not Available"));
+                  j++;    
+             }
+             
+             
+             i++;
+             if (i==5 || j>l)
+                 break;
+             
+         }
+                }
+        
+            // setting Period from Table class
+            period.setCellValueFactory(new PropertyValueFactory<>("period"));
+    
+            // setting Status value from Table Class
+        status.setCellValueFactory(new PropertyValueFactory<>("status"));
+      
+        table.setItems(info);
+        
     }
     
     public void back(ActionEvent event) throws IOException{
@@ -72,16 +144,8 @@ public class DisplayEventController implements Initializable {
         
          
         
-        ObservableList<Table> info = FXCollections.observableArrayList();
-        info.add(new Table("1","Available"));
-            // Period
-            period.setCellValueFactory(new PropertyValueFactory<>("period"));
-    
-            // Status
-        status.setCellValueFactory(new PropertyValueFactory<>("status"));
-            
-        table.setItems(info);
-       // table.getColumns().addAll(periodColumn,statusColumn);
+        
+       
     }    
     
 } 

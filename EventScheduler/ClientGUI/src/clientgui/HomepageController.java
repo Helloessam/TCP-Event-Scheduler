@@ -36,6 +36,20 @@ public class HomepageController implements Initializable {
         window.setScene(receivingScene);
         window.show();  
     }
+    public void loadScheduleAnEventScene(ActionEvent event) throws IOException{
+        Parent root= FXMLLoader.load(getClass().getResource("ScheduleAnEvent.fxml"));
+        Scene receivingScene = new Scene(root);
+        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(receivingScene);
+        window.show();  
+    }
+    public void loadBookTicketScene(ActionEvent event) throws IOException{
+        Parent root= FXMLLoader.load(getClass().getResource("BookTicket.fxml"));
+        Scene receivingScene = new Scene(root);
+        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(receivingScene);
+        window.show();  
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        helloText.setText("Hello " + LogInSceneController.full_name+"!");

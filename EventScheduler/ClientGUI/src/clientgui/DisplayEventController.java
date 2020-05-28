@@ -33,14 +33,14 @@ public class DisplayEventController implements Initializable {
     private Button dispBtn;
     
     ObservableList<String> list = FXCollections.observableArrayList("Room1","Room2", "Room3");
-    String roomNo = (String) roomSelector.getValue();
-    String daten = datePick.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-    String p = "2 " + roomNo + " " + "daten";
+    
     
     
     public void display(ActionEvent event) throws IOException{
-         
-         System.out.print(p);
+        String roomNo = (String) roomSelector.getValue();
+        String daten = datePick.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        String p = "2 " + roomNo + " " + daten;
+        System.out.println(p);
         
     }
     

@@ -37,10 +37,11 @@ public class DisplayEventController implements Initializable {
     
     
     public void display(ActionEvent event) throws IOException{
-        String roomNo = (String) roomSelector.getValue();
-        String daten = datePick.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        String p = "2 " + roomNo + " " + daten;
-        System.out.println(p);
+
+         String roomNo = (String) roomSelector.getValue();
+         String daten = datePick.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+         String p = "2 " + roomNo + " " + daten;
+         System.out.print(p);
         
     }
     

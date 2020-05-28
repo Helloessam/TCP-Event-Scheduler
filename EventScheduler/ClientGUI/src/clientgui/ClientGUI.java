@@ -40,6 +40,10 @@ public class ClientGUI extends Application {
             new Alert(Alert.AlertType.ERROR, "UNABLE TO REACH SERVER!").showAndWait();
             System.exit(status);
         }
+        
+        scene.getStylesheets().add(getClass().getResource("AllButtons.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
     }
 
 

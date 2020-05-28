@@ -46,14 +46,25 @@
                   </Label>
                   <DatePicker fx:id="datePick" promptText="Event Date" />
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
             <Separator orientation="VERTICAL" prefHeight="16.0" prefWidth="1.0" />
-            <Button fx:id="backbtn" mnemonicParsing="false" onAction="#back" prefHeight="45.0" prefWidth="155.0" text="Back" translateX="125.0" translateY="50.0">
+            <Button fx:id="backbtn" mnemonicParsing="false" onAction="#back" prefHeight="45.0" prefWidth="155.0" stylesheets="@CSS/AllButtons.css" text="Back" translateX="125.0" translateY="50.0">
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
             <Button fx:id="dispBtn" mnemonicParsing="false" onAction="#display" prefHeight="45.0" prefWidth="155.0" text="Display!" translateX="-125.0" />
+            <Label fx:id="nodata">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
             <TableView fx:id="table" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="406.0">
               <columns>
                 <TableColumn fx:id="period" prefWidth="200.0" text="Period" />

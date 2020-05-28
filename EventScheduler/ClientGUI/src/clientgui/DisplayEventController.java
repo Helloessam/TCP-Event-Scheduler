@@ -18,9 +18,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -40,6 +42,7 @@ public class DisplayEventController implements Initializable {
     @FXML 
     private Button dispBtn;
     @FXML private Button backbtn;
+    @FXML private Label nodata;
     @FXML private TableView<Table> table;
     @FXML private TableColumn<Table,String> period;
     @FXML private TableColumn<Table,String> status;
@@ -50,13 +53,14 @@ public class DisplayEventController implements Initializable {
     
     
     public void display(ActionEvent event) throws IOException, RuntimeException{
-         int indicator[]={0,0,0,0,0};
+         int indicator[]={0,0,0,0,0};     
+         
+         String daten = datePick.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")); 
          String roomNo = (String) roomSelector.getValue();
-         String daten = datePick.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
          String p = "2 " + roomNo + " " + daten;
          System.out.print(p);
          // Sending Date and Room to server to query on DB
-         ClientGUI.out.writeUTF(p);
+         ClientGUI.out.writeUTF(p);           
          // Receiveing response from server
              String   response = ClientGUI.in.readUTF();
                 System.out.print(response);

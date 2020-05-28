@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.EntrySceneController">
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.EntrySceneController">
    <children>
       <ImageView fitHeight="804.0" fitWidth="1200.0" pickOnBounds="true" smooth="false">
          <image>
@@ -27,12 +27,12 @@
             </ImageView>
             <VBox alignment="CENTER" prefHeight="213.0" prefWidth="693.0" spacing="30.0">
                <children>
-                  <Button fx:id="logInBtn" alignment="CENTER" layoutX="34.0" layoutY="10.0" mnemonicParsing="false" onAction="#logInBtn" onMouseClicked="#logInBtn" style="-fx-background-color: #000000,        linear-gradient(#7ebcea, #2f4b8f),        linear-gradient(#426ab7, #263e75),        linear-gradient(#395cab, #223768);; -fx-background-radius: 30; -fx-background-insets: 0,1,2,3,0; -fx-text-fill: white;" text="Log In to Your Account" textAlignment="CENTER">
+                  <Button fx:id="logInBtn" alignment="CENTER" layoutX="34.0" layoutY="10.0" mnemonicParsing="false" onAction="#logInBtn" onMouseClicked="#logInBtn" text="Log In to Your Account" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>
                   </Button>
-                  <Button fx:id="registerBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="121.0" mnemonicParsing="false" onAction="#registerBtn" style="-fx-background-color: #000000,        linear-gradient(#7ebcea, #2f4b8f),        linear-gradient(#426ab7, #263e75),        linear-gradient(#395cab, #223768);; -fx-background-radius: 30; -fx-background-insets: 0,1,2,3,0; -fx-text-fill: white;" text="Register a New Account" textAlignment="CENTER">
+                  <Button fx:id="registerBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="121.0" mnemonicParsing="false" onAction="#registerBtn" text="Register a New Account" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>

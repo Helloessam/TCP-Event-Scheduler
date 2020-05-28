@@ -17,7 +17,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -31,6 +34,9 @@ public class DisplayEventController implements Initializable {
     @FXML private ComboBox roomSelector;
     @FXML 
     private Button dispBtn;
+    @FXML private TableView<Table> table;
+    @FXML private TableColumn<Table,String> period;
+    @FXML private TableColumn<Table,String> status;
     
     ObservableList<String> list = FXCollections.observableArrayList("Room1","Room2", "Room3");
     
@@ -50,6 +56,19 @@ public class DisplayEventController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         roomSelector.setItems(list);
+        
+         
+        
+        ObservableList<Table> info = FXCollections.observableArrayList();
+        info.add(new Table("1","Available"));
+            // Period
+            period.setCellValueFactory(new PropertyValueFactory<>("period"));
+    
+            // Status
+        status.setCellValueFactory(new PropertyValueFactory<>("status"));
+            
+        table.setItems(info);
+       // table.getColumns().addAll(periodColumn,statusColumn);
     }    
     
 } 

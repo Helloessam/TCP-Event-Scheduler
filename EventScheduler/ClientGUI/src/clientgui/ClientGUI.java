@@ -23,7 +23,7 @@ public class ClientGUI extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("EntryScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("DisplayEvent.fxml"));
         
         Scene scene = new Scene(root);
         

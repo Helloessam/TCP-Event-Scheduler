@@ -7,9 +7,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="clientgui.ScheduleAnEventController">
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.ScheduleAnEventController">
     <children>
-        <Button fx:id="addEventBtn" layoutX="321.0" layoutY="439.0" onAction="#addEventBtn" prefHeight="49.0" prefWidth="104.0" text="ADD EVENT" />
+        <Button fx:id="addEventBtn" layoutX="321.0" layoutY="439.0" onAction="#addEventBtn" prefHeight="49.0" prefWidth="104.0" stylesheets="@CSS/AllButtons.css" text="ADD EVENT" />
       <TextField fx:id="eventTitletxt" layoutX="134.0" layoutY="106.0" prefHeight="35.0" prefWidth="295.0" />
       <ComboBox fx:id="timeSlotCbox" layoutX="134.0" layoutY="191.0" prefHeight="35.0" prefWidth="295.0" />
       <ComboBox fx:id="roomIdCbox" layoutX="134.0" layoutY="263.0" prefHeight="35.0" prefWidth="295.0" />

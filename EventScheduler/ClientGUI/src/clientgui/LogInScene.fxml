@@ -58,7 +58,7 @@
             </VBox>
             <VBox alignment="CENTER" spacing="20.0">
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#logInPressed" prefHeight="61.0" prefWidth="281.0" text="Log In" textAlignment="CENTER">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#logInPressed" prefHeight="61.0" prefWidth="281.0" stylesheets="@CSS/AllButtons.css" text="Log In" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>
@@ -66,7 +66,7 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showHomePage" prefHeight="61.0" prefWidth="281.0" text="Back" textAlignment="CENTER">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showHomePage" prefHeight="61.0" prefWidth="281.0" stylesheets="@CSS/AllButtons.css" text="Back" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>

@@ -25,7 +25,7 @@
                </font>
             </Text>
             <ListView fx:id="eventsList" onMouseClicked="#listViewClicked" prefHeight="378.0" prefWidth="1199.0" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goBackToHomepage" prefHeight="61.0" prefWidth="281.0" text="Back" textAlignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goBackToHomepage" prefHeight="61.0" prefWidth="281.0" stylesheets="@CSS/AllButtons.css" text="Back" textAlignment="CENTER">
                <font>
                   <Font name="Cambria" size="31.0" />
                </font>

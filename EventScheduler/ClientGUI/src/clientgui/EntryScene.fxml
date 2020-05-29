@@ -27,12 +27,12 @@
             </ImageView>
             <VBox alignment="CENTER" prefHeight="213.0" prefWidth="693.0" spacing="30.0">
                <children>
-                  <Button fx:id="logInBtn" alignment="CENTER" layoutX="34.0" layoutY="10.0" mnemonicParsing="false" onAction="#logInBtn" onMouseClicked="#logInBtn" text="Log In to Your Account" textAlignment="CENTER">
+                  <Button fx:id="logInBtn" alignment="CENTER" layoutX="34.0" layoutY="10.0" mnemonicParsing="false" onAction="#logInBtn" onMouseClicked="#logInBtn" stylesheets="@CSS/AllButtons.css" text="Log In to Your Account" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>
                   </Button>
-                  <Button fx:id="registerBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="121.0" mnemonicParsing="false" onAction="#registerBtn" text="Register a New Account" textAlignment="CENTER">
+                  <Button fx:id="registerBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="121.0" mnemonicParsing="false" onAction="#registerBtn" stylesheets="@CSS/AllButtons.css" text="Register a New Account" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>

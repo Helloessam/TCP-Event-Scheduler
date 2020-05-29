@@ -56,7 +56,7 @@
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="dispBtn" mnemonicParsing="false" onAction="#display" prefHeight="45.0" prefWidth="155.0" text="Display!" translateX="-125.0" />
+            <Button fx:id="dispBtn" mnemonicParsing="false" onAction="#display" prefHeight="45.0" prefWidth="155.0" stylesheets="@CSS/AllButtons.css" text="Display!" translateX="-125.0" />
             <Label fx:id="nodata">
                <VBox.margin>
                   <Insets top="10.0" />

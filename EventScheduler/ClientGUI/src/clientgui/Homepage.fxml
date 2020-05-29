@@ -34,12 +34,12 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="213.0" prefWidth="693.0" spacing="30.0">
                <children>
-                  <Button fx:id="displayBtn" alignment="CENTER" layoutX="34.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadDisplayScene" prefHeight="61.0" prefWidth="416.0" text="Display Available Slots" textAlignment="CENTER">
+                  <Button fx:id="displayBtn" alignment="CENTER" layoutX="34.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadDisplayScene" prefHeight="61.0" prefWidth="416.0" stylesheets="@CSS/AllButtons.css" text="Display Available Slots" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="121.0" mnemonicParsing="false" onAction="#loadScheduleAnEventScene" prefHeight="61.0" prefWidth="420.0" text="Schedule An Event" textAlignment="CENTER">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="121.0" mnemonicParsing="false" onAction="#loadScheduleAnEventScene" prefHeight="61.0" prefWidth="420.0" stylesheets="@CSS/AllButtons.css" text="Schedule An Event" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>
@@ -47,12 +47,12 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="431.0" layoutY="132.0" mnemonicParsing="false" onAction="#loadBookTicketScene" prefHeight="61.0" prefWidth="416.0" text="Book A Ticket" textAlignment="CENTER">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="431.0" layoutY="132.0" mnemonicParsing="false" onAction="#loadBookTicketScene" prefHeight="61.0" prefWidth="416.0" stylesheets="@CSS/AllButtons.css" text="Book A Ticket" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="431.0" layoutY="192.0" mnemonicParsing="false" onAction="#loadYourScheduledEventsScene" text="Show Your Scheduled Events" textAlignment="CENTER">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="431.0" layoutY="192.0" mnemonicParsing="false" onAction="#loadYourScheduledEventsScene" stylesheets="@CSS/AllButtons.css" text="Show Your Scheduled Events" textAlignment="CENTER">
                      <font>
                         <Font name="Cambria" size="31.0" />
                      </font>

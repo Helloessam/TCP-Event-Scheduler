@@ -66,7 +66,7 @@ public class ScheduleAnEventController implements Initializable {
         else{
             EventManagerClass newEventManager;
             newEventManager = new EventManagerClass();
-          //  newEventManager.createEvent(EventTitle,localDate.toString(),RoomId,transfarevalue);
+            newEventManager.createEvent(EventTitle,localDate.toString(),RoomId,transfarevalue);
         }
 
     }

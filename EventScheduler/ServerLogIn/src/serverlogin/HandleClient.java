@@ -20,14 +20,10 @@ public class HandleClient implements Runnable{
     static String request;
     static String requestArray[];
     
-    private static final String username = "admintest";
-    private static final String password = "admintest";
-    private static final String conn = "jdbc:mysql://localhost/EventScheduler";
-    Connection con = null;
+    
     
     public HandleClient(Socket socket) throws SQLException{
         this.socket = socket;
-        con = DriverManager.getConnection(conn,username,password);
     }
 
     @Override
@@ -55,7 +51,7 @@ public class HandleClient implements Runnable{
     
     private void logInCheck() throws IOException{
         try{
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            PreparedStatement stmt = ServerLogIn.con.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             stmt.setString(1,requestArray[1]) ;
             stmt.setString(2, requestArray[2]);
             ResultSet rs = stmt.executeQuery();
@@ -72,7 +68,7 @@ public class HandleClient implements Runnable{
     }
     private void registerNewUser() throws IOException{
          try{
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?)",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            PreparedStatement stmt = ServerLogIn.con.prepareStatement("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?)",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             stmt.setString(1, requestArray[1]) ;
             stmt.setString(2, requestArray[2]);
             stmt.setString(3, requestArray[5]);
@@ -91,7 +87,7 @@ public class HandleClient implements Runnable{
     private void displayAvailableSlots() throws IOException{
         String response = "";
         try{
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM reservations WHERE room_id=? AND Event_date=? ORDER BY period ASC",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            PreparedStatement stmt = ServerLogIn.con.prepareStatement("SELECT * FROM reservations WHERE room_id=? AND Event_date=? ORDER BY period ASC",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             stmt.setString(1, requestArray[1]) ;
             stmt.setString(2, requestArray[2]);
             ResultSet rs = stmt.executeQuery();
@@ -104,8 +100,22 @@ public class HandleClient implements Runnable{
         }
     }
 
-    private void scheduleAnEvent() {
-        //Method here should handle scheduling a new event
+    private void scheduleAnEvent() throws IOException {
+        System.out.println("Entered");
+        try{
+            PreparedStatement stmt = ServerLogIn.con.prepareStatement("INSERT INTO reservations VALUES (?, ?, ?, ?, ?, 50)",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            stmt.setString(1, requestArray[1]) ;
+            stmt.setString(2, requestArray[3]);
+            stmt.setString(3, requestArray[2]);
+            stmt.setString(4, requestArray[4]);
+            stmt.setString(5, requestArray[5]);
+            stmt.execute();
+            out.writeUTF("scheduled");
+        }
+        catch(SQLException e){
+            out.writeUTF("error");
+            System.out.println(e);
+        }
     }
 
     private void bookATicket() {
@@ -115,7 +125,7 @@ public class HandleClient implements Runnable{
     private void displayUsersScheduledEvents() throws IOException {
         String response = "";
         try{
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM reservations WHERE username=? ORDER BY event_date ASC, period ASC",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            PreparedStatement stmt = ServerLogIn.con.prepareStatement("SELECT * FROM reservations WHERE username=? ORDER BY event_date ASC, period ASC",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             stmt.setString(1, requestArray[1]);
             ResultSet rs = stmt.executeQuery();
             while(rs.next())

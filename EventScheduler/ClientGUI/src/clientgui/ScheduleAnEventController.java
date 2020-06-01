@@ -47,7 +47,12 @@ public class ScheduleAnEventController implements Initializable {
         EventTitle  = eventTitletxt.getText();
         Timeperiod = timeSlotCbox.getValue().toString();
         RoomId = roomIdCbox.getValue().toString();
-        LocalDate localDate = datePickerCbox.getValue();
+         LocalDate localDate = datePickerCbox.getValue();
+        if (localDate.isBefore(LocalDate.now())) {
+            new Alert(Alert.AlertType.WARNING, "Please enter a valid date ! ").showAndWait();
+        } else {
+                //do nothing
+        }
         if (timeSlotCbox.getValue().toString().equals("08:00 am to 10:00 am ")){
             transfarevalue = "P1";
         }

@@ -2,27 +2,34 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="clientgui.BookTicketController">
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.BookTicketController">
    <children>
-      <Label layoutX="57.0" layoutY="55.0" prefHeight="95.0" prefWidth="350.0" text="Welcome Search for an event  ">
+      <Label layoutX="369.0" layoutY="114.0" prefHeight="95.0" prefWidth="350.0" text="Welcome Search for an event  ">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="eventTitleSearchtxt" layoutX="57.0" layoutY="156.0" prefHeight="53.0" prefWidth="329.0" />
-      <Button fx:id="searchbtn" layoutX="423.0" layoutY="156.0" mnemonicParsing="false" onAction="#searchbtn" prefHeight="53.0" prefWidth="121.0" text="Search" />
-      <Label layoutX="57.0" layoutY="275.0" prefHeight="53.0" prefWidth="321.0" text="Pick and timeslot to book it !">
+      <TextField fx:id="eventTitleSearchtxt" layoutX="369.0" layoutY="215.0" prefHeight="53.0" prefWidth="329.0" />
+      <Button fx:id="searchbtn" layoutX="735.0" layoutY="215.0" mnemonicParsing="false" onAction="#searchbtn" prefHeight="53.0" prefWidth="121.0" text="Search" />
+      <Label layoutX="373.0" layoutY="283.0" prefHeight="53.0" prefWidth="321.0" text="Pick and Date to book it !">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <ComboBox fx:id="eventChooserCbox" layoutX="57.0" layoutY="328.0" prefHeight="59.0" prefWidth="329.0" />
-      <Button fx:id="bookbtn" layoutX="423.0" layoutY="328.0" mnemonicParsing="false" onAction="#bookbtn" prefHeight="59.0" prefWidth="129.0" text="Book it" />
+      <ComboBox fx:id="eventChooserCbox" layoutX="369.0" layoutY="483.0" prefHeight="59.0" prefWidth="329.0" />
+      <Button fx:id="bookbtn" layoutX="719.0" layoutY="483.0" mnemonicParsing="false" onAction="#bookbtn" prefHeight="59.0" prefWidth="129.0" text="Book it" />
+      <DatePicker fx:id="datePickerCbox" layoutX="365.0" layoutY="345.0" prefHeight="53.0" prefWidth="337.0" />
+      <Label layoutX="373.0" layoutY="423.0" prefHeight="53.0" prefWidth="321.0" text="Pick and timeslot to book it !">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="backbtn" layoutX="38.0" layoutY="29.0" mnemonicParsing="false" onAction="#back" prefWidth="64.0" text="Back" />
    </children>
 </AnchorPane>
-

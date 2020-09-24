@@ -1,2 +1,2 @@
-# EventMaster
-Event scheduler and room reservation system
+# TCP-Events-Scheduler
+TCP Events Scheduler Using Socket Programming
